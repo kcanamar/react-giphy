@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import GiphyDisplay from './components/GiphyDisplay';
+import Form from './components/Form';
 import './App.css';
+import { useState} from 'react';
 
 function App() {
+  const API_KEY = "wJvPRctp0EHfY9eJUjGHvT3JNjwp8fY0"
+  const [giphy, setGiphy] = useState(null)
+
+  const getRandomGiphy = async (randomGiphy) => {
+    const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&${randomGiphy}`)
+    const data = await response.json()
+    setGiphy(data)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form getRandomGiphy={getRandomGiphy}/>
+      <GiphyDisplay giphy={giphy}/>
     </div>
   );
 }
