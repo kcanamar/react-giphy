@@ -1,7 +1,7 @@
 import GiphyDisplay from './components/GiphyDisplay';
 import Form from './components/Form';
-import './App.css';
 import { useState} from 'react';
+import "./App.sass";
 
 function App() {
   const API_KEY = "wJvPRctp0EHfY9eJUjGHvT3JNjwp8fY0"

@@ -15,9 +15,9 @@ export default function Form({getRandomGiphy}) {
     }
     return (
         <div>
-            <h1>Click Here For a Random Giphy</h1>
+            <h1 className="title">Giphy Browser</h1>
             <form onSubmit={handleSubmit}>
-                <button type="submit">Get Random Giphy</button>
+                <button className="btn" type="submit">Get Random Giphy</button>
             </form>
         </div>
     )
